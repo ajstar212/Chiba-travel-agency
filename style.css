@@ -1,0 +1,246 @@
+@import url(//db.onlinewebfonts.com/c/3fa4ef03924316d59af08ee5bebe1325?family=Andea+Rounded);
+
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;900&display=swap");
+
+:root {
+  --white: #ffffff;
+  --dark-green: #0e1d28;
+  --dark-blue: #151824;
+  --red: #ff3d3d;
+  --headerFont: "Andea-Rounded", "sans-serif";
+  --bodyFont: "Lato", "sans-serif";
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+
+/*--------Navbar-------*/
+.navbar-area {
+  background: transparent;
+  position: absolute;
+  width: 100%;
+}
+.site-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+a.site-logo {
+  font-size: 26px;
+  font-weight: 800;
+  color: #fff;
+  text-decoration: none;
+}
+.site-navbar ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+}
+.site-navbar ul li a {
+  color: #fff;
+  padding: 20px;
+  display: block;
+  text-decoration: none;
+}
+.site-navbar ul li a:hover {
+  color: #ff3d3d;
+}
+/* navbar regular css end */
+
+/* nav-toggler css start */
+.nav-toggler {
+  border: 3px solid #fff;
+  padding: 5px;
+  background-color: transparent;
+  cursor: pointer;
+  height: 39px;
+  display: none;
+}
+.nav-toggler span,
+.nav-toggler span:before,
+.nav-toggler span:after {
+  width: 28px;
+  height: 3px;
+  background-color: #fff;
+  display: block;
+  transition: 0.3s;
+}
+.nav-toggler span:before {
+  content: "";
+  transform: translateY(-9px);
+}
+.nav-toggler span:after {
+  content: "";
+  transform: translateY(6px);
+}
+.nav-toggler.toggler-open span {
+  background-color: transparent;
+}
+.nav-toggler.toggler-open span:before {
+  transform: translateY(0px) rotate(45deg);
+}
+.nav-toggler.toggler-open span:after {
+  transform: translateY(-3px) rotate(-45deg);
+}
+
+/*---hero----*/
+.hero {
+  height: 100vh;
+  width: 100%;
+  background-image: url(./street.png);
+  background-size: cover;
+  display: flex;
+  align-items: center;
+}
+.hero h1 {
+  color: #ffffff;
+  font-family: var(--bodyFont);
+}
+.hero p {
+  color: #ffffff;
+  font-family: var(--bodyFont);
+  padding-right: 40%;
+  margin-top: 20px;
+}
+.search-input {
+  display: flex;
+  flex-direction: column;
+}
+.search-row .inp-label {
+  color: #ffffff;
+  font-size: 20px;
+  transition: all 0.5s ease-out;
+}
+.focused {
+  transform: translateY(20px);
+}
+
+.search-btn button {
+  background-color: var(--red);
+  padding: 5px 30px;
+  outline: none;
+  border: none;
+  color: #ffffff;
+  font-size: 25px;
+}
+.search-row input {
+  width: 300px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  transition: all 0.2s ease-out;
+  caret-color: #ffffff;
+  color: #ffffff;
+}
+.search-input input:focus {
+  border-bottom: 2px solid #ffffff;
+}
+
+/*----benefits of chiba----*/
+.benefit {
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+.benefit h1 {
+  margin-top: 50px;
+}
+.benefit-card h2 {
+  color: #ff3d3d;
+  font-size: 50px;
+  margin-left: 10px;
+}
+.benefit-card .card-head {
+  font-weight: bold;
+  font-size: 15px;
+}
+.benefit-card a {
+  margin-top: 20px;
+  color: #ff3d3d;
+  transition: all 0.5s ease-out;
+  font-size: 20px;
+}
+.benefit-card a i {
+  margin-left: 10px;
+}
+.benefit-card a:hover {
+  color: #d13b3b;
+}
+
+/*-----inspired----*/
+.inspired {
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.inspired .heading .line {
+  width: 300px;
+  height: 2px;
+  background-color: var(--red);
+}
+.inspired .heading a {
+  color: #ff3d3d;
+  transition: all 0.5s ease-out;
+  font-size: 20px;
+}
+.inspired .heading a:hover {
+  color: #d13b3b;
+}
+
+.inspired .upper {
+  margin-bottom: 20px;
+}
+.inspired .upper img {
+  width: 100%;
+  height: 100%;
+  margin-top: 20px;
+}
+.inspired .lower img {
+  width: 100%;
+  height: 100%;
+}
+
+/*----media queries-----*/
+@media screen and (max-width: 767px) {
+  /* navbar css for mobile start */
+  .nav-toggler {
+    display: block;
+  }
+  .site-navbar {
+    min-height: 60px;
+  }
+  .site-navbar ul {
+    position: absolute;
+    width: 100%;
+    height: calc(100vh - 60px);
+    left: 0;
+    top: 60px;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.75);
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.3s;
+  }
+  .site-navbar ul li {
+    width: 100%;
+    text-align: center;
+  }
+  .site-navbar ul li a {
+    padding: 25px;
+  }
+  .site-navbar ul li a:hover {
+    color: #ff3d3d;
+  }
+  .site-navbar ul.open {
+    max-height: 100vh;
+    overflow: visible;
+    position: fixed;
+  }
+}
